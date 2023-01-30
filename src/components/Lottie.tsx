@@ -8,7 +8,7 @@ const Lottie = () => {
   const lottieRef = useRef(null);
   const [on, setOn] = useState(false);
   const { ref, inView } = useInView({
-    rootMargin: "0px 0px -100% 0px",
+    rootMargin: "0px 0px -60% 0px",
     triggerOnce: true,
   });
 
