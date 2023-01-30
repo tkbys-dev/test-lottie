@@ -24,7 +24,11 @@ const serialNumToRem = (length = 100) => {
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        gray: "#e6e6e6",
+      },
+    },
   },
   plugins: [],
 };
