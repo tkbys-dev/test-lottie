@@ -1,11 +1,16 @@
 import React, { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import lottie from "lottie-web";
 import animData from "../data/lottie.json";
 
 const Lottie = () => {
   const lottieRef = useRef(null);
   const [on, setOn] = useState(false);
+  const { ref, inView } = useInView({
+    rootMargin: "0px 0px -100% 0px",
+    triggerOnce: true, // 最初の一度だけ実行
+  });
 
   useEffect(() => {
     const anim = lottie.loadAnimation({
@@ -16,20 +21,22 @@ const Lottie = () => {
       animationData: animData,
     });
 
-    if (on) {
+    console.log(inView);
+
+    if (inView) {
       anim.play();
     }
 
     return () => {
       anim.destroy();
     };
-  }, [on]);
+  }, [inView]);
 
   return (
     <>
       <div className="w-full h-screen bg-green-500"></div>
       <div className="w-full h-screen bg-blue-500"></div>
-      <div className="w-full h-screen bg-gray">
+      <div className="w-full h-screen bg-gray" ref={ref}>
         <div ref={lottieRef}></div>
       </div>
     </>
