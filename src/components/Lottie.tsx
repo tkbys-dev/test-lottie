@@ -9,7 +9,7 @@ const Lottie = () => {
   const [on, setOn] = useState(false);
   const { ref, inView } = useInView({
     rootMargin: "0px 0px -100% 0px",
-    triggerOnce: true, // 最初の一度だけ実行
+    triggerOnce: true,
   });
 
   useEffect(() => {
