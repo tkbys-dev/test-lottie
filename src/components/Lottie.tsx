@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
+import { motion } from "framer-motion";
 import lottie from "lottie-web";
 import animData from "../data/lottie.json";
 
