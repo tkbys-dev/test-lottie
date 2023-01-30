@@ -1,8 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
+import lottie from "lottie-web";
+import animAll from "../data/lottie.json";
 
 const Lottie = () => {
+  const lottieRef = useRef(null);
+
+  useEffect(() => {
+    const anim = lottie.loadAnimation({
+      container: lottieRef.current!,
+      renderer: "svg",
+      loop: false,
+      autoplay: true,
+      animationData: animAll,
+    });
+  });
+
   return (
-    <div className="md:flex justify-between items-center mb-60 md:mb-78"></div>
+    <div>
+      <div ref={lottieRef} className=""></div>
+    </div>
   );
 };
 
