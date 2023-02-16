@@ -16,7 +16,7 @@ const Lottie = () => {
     const anim = lottie.loadAnimation({
       container: lottieRef.current!,
       renderer: "svg",
-      loop: false,
+      loop: true,
       autoplay: false,
       animationData: animData,
     });
